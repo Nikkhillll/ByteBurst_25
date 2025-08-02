@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Core</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Campus Core</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#societies">Societies</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#registrations">My Registrations</a>
+      <a href="#contact">Contact</a>
+      <a href="admin.html" class="admin-link">Admin Login</a>
+
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Discover • Connect • Join</h1>
+      <p>All Societies in One Place – Events, Inductions & Registrations</p>
+      <a href="#societies" class="btn">Explore Societies</a>
+    </div>
+  </section>
+
+  <!-- Carousel -->
+  <section class="carousel-section">
+    <div class="carousel">
+      <button class="prev">&#10094;</button>
+      <div class="carousel-track">
+        <div class="slide"><img src="cdcl.png" alt="Coder Group"></div>
+        <div class="slide"><img src="95db473d-f052-44a7-9956-28cc12df3371.png" alt="Editorial Board"></div>
+        <div class="slide"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="NSS"></div>
+        <div class="slide"><img src="hero.jpg" alt="Cultural Synod"></div>
+      </div>
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Societies Section -->
+  <section id="societies" class="societies">
+    <h2>Our Societies</h2>
+    <div class="society-grid" id="society-grid"></div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section id="timeline" class="timeline">
+    <h2>Induction Timeline</h2>
+    <div class="timeline-container" id="timeline-container"></div>
+  </section>
+
+  <!-- My Registrations -->
+  <section id="registrations" class="registrations">
+    <h2>My Registrations</h2>
+    <div id="registration-list"></div>
+  </section>
+
+  <!-- Society Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Registration Form Modal -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="registerClose">&times;</span>
+      <h2 id="registerEventTitle">Register for Event</h2>
+      <form id="registrationForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="roll" placeholder="Roll Number" required>
+        <select id="branch" required></select>
+        <select id="year" required></select>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+      <p id="successMessage" style="display:none; color:green; margin-top:10px;">✅ Registration Successful!</p>
+    </div>
+  </div>
+  
+  <section id="contact" class="contact-section">
+  <h2>Contact Us</h2>
+  <p>If you have any questions or need more information, feel free to reach out!</p>
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" rows="4" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>© 2025 Campus Core | All Rights Reserved</p>
+  </footer>
+
+  <script src="script3.js"></script>
+</body>
+</html>

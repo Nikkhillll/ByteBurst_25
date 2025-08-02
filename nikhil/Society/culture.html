@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cultural Synod</title>
+    <style>
+        :root {
+            --primary: #2a3b47;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #2a9d8f;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #e76f51, url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5859320d-0ba8-43c1-98c9-922df9561ccc.png');
+            background-size: cover;
+            color: #e9c46a;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .nav-bar {
+            background-color: #264653;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fca311;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #264653;
+            font-weight: normal;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            background-color: #264653;
+            color: #e9c46a;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+        }
+
+        .about-section {
+            background-color: #e76f51;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+        }
+
+        .event-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card {
+            background: #e76f51;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .event-date {
+            color: #fcbf49;
+            font-weight: bold;
+        }
+
+        .event-desc {
+            color: #f0ebd8;
+        }
+
+        .event-card .btn {
+            margin-top: auto;
+            background-color: #2a3b47;
+        }
+
+        .event-card .btn:hover {
+            background-color: var(--primary);
+        }
+
+        .gallery-carousel {
+            overflow: hidden;
+            position: relative;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .gallery-item {
+            flex: 0 0 100%;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--secondary);
+        }
+
+        #contact h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1rem;
+        }
+
+        #contact input,
+        #contact textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #contact button {
+            justify-self: center;
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav-bar">
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#events">Events</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#team">Team</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+
+    <header>
+        <h1>Cultural Synod</h1>
+        <p>College Cultural Club • Celebrating Talent & Tradition</p>
+        <a href="#contact" class="btn">Join Our Team</a>
+    </header>
+
+    <div class="container">
+        <section id="about" class="about-section">
+            <h2>About Our Club</h2>
+            <p>The Cultural Synod is the heartbeat of our college's cultural life. We are a diverse community of
+                students passionate about music, dance, theatre, art, and heritage. Our mission is to promote and
+                preserve cultural expression through vibrant student-led initiatives and events.</p>
+            <ul>
+                <li>Organizing annual cultural fests, talent shows, and heritage days</li>
+                <li>Providing a platform for performers, artists, and creatives</li>
+                <li>Fostering inclusivity and tradition through diverse cultural activities</li>
+            </ul>
+            <p>Founded in 2015, the club has grown into a space where tradition meets innovation, and every talent finds
+                a stage.</p>
+        </section>
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <div class="event-cards">
+                <div class="event-card">
+                    <img src="https://source.unsplash.com/400x250/?open-mic" alt="Open Mic"
+                        style="width:100%; border-radius: 8px;">
+                    <h3>Literary Open Mic</h3>
+                    <p class="event-date">March 15, 2024</p>
+                    <p class="event-desc">Student writers showcase their work in our monthly open mic session.</p>
+                    <a href="#contact" class="btn">Register</a>
+                </div>
+
+                <div class="event-card">
+                    <img src="https://source.unsplash.com/400x250/?journalism" alt="Journalism Workshop"
+                        style="width:100%; border-radius: 8px;">
+                    <h3>Journalism Workshop</h3>
+                    <p class="event-date">April 5, 2024</p>
+                    <p class="event-desc">Hands-on training for aspiring campus journalists.</p>
+                    <a href="#contact" class="btn">Register</a>
+                </div>
+
+                <div class="event-card">
+                    <img src="https://source.unsplash.com/400x250/?party,celebration" alt="Magazine Launch"
+                        style="width:100%; border-radius: 8px;">
+                    <h3>Magazine Launch Party</h3>
+                    <p class="event-date">May 20, 2024</p>
+                    <p class="event-desc">Celebrate the release of our Spring 2024 issue.</p>
+                    <a href="#contact" class="btn">Register</a>
+                </div>
+
+                <div class="event-card">
+                    <img src="https://source.unsplash.com/400x250/?writing,creativity" alt="Writing Fest"
+                        style="width:100%; border-radius: 8px;">
+                    <h3>Creative Writing Fest</h3>
+                    <p class="event-date">June 15, 2024</p>
+                    <p class="event-desc">A day-long event with competitions, poetry and short stories.</p>
+                    <a href="#contact" class="btn">Register</a>
+                </div>
+
+                <div class="event-card">
+                    <img src="https://source.unsplash.com/400x250/?training,editorial" alt="Bootcamp"
+                        style="width:100%; border-radius: 8px;">
+                    <h3>Editorial Skill Bootcamp</h3>
+                    <p class="event-date">July 10, 2024</p>
+                    <p class="event-desc">Get trained in proofreading, editing, and content curation.</p>
+                    <a href="#contact" class="btn">Register</a>
+                </div>
+
+                <div class="event-card">
+                    <img src="https://source.unsplash.com/400x250/?design,typography" alt="Design Lab"
+                        style="width:100%; border-radius: 8px;">
+                    <h3>Design & Layout Lab</h3>
+                    <p class="event-date">August 5, 2024</p>
+                    <p class="event-desc">Explore the art of magazine design using modern layout techniques.</p>
+                    <a href="#contact" class="btn">Register</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h2>Photo Gallery</h2>
+            <div class="gallery-carousel">
+                <div class="gallery-track">
+                    <div class="gallery-item">
+                        <img
+                            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5b210cde-69e8-4c20-84ad-968870a763d8.png" />
+                    </div>
+                    <div class="gallery-item">
+                        <img
+                            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5e758f5e-1d60-425a-8041-e9bead14c8bd.png" />
+                    </div>
+                    <div class="gallery-item">
+                        <img
+                            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c03e206f-0b5b-488b-bf3a-4a272db2e936.png" />
+                    </div>
+                    <div class="gallery-item">
+                        <img
+                            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b2abc3fb-7e60-4ee4-b66d-c819713d5d96.png" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        -- ✅ Team -->
+ection id="team">
+      <h2>Our Team</h2>
+      <p>Meet the editorial leadership:</p>
+      
+      <div class="team-grid">
+          <div class="team-member">
+              <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4750f8ed-7c37-49c0-bf4d-0267b8310d27.png" alt="Portrait of main editor with friendly smile and professional attire" class="member-photo">
+              <h3 class="member-name">Sarah Johnson</h3>
+              <p class="member-role">Editor-in-Chief</p>
+              <p>Senior, English Literature</p>
+          </div>
+          
+          <div class="team-member">
+              <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6847fa86-ae9e-41f7-9c9f-6bc1a52b3efd.png" alt="Portrait of managing editor looking engaged with tablet in hand" class="member-photo">
+              <h3 class="member-name">Michael Chen</h3>
+              <p class="member-role">Managing Editor</p>
+              <p>Junior, Journalism</p>
+          </div>
+          
+          <div class="team-member">
+              <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9e359919-235d-4707-a9dd-49d1de0d653d.png" alt="Portrait of literary editor holding books and wearing glasses" class="member-photo">
+              <h3 class="member-name">Priya Patel</h3>
+              <p class="member-role">Literary Editor</p>
+              <p>Senior, Creative Writing</p>
+          </div>
+          
+          <div class="team-member">
+              <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/966a6316-bed8-4c9d-b2a1-7a67f6605987.png" alt="Portrait of training director gesturing during presentation" class="member-photo">
+              <h3 class="member-name">David Wilson</h3>
+              <p class="member-role">Training Director</p>
+              <p>Faculty Advisor, Media Studies</p>
+          </div>
+      </div>
+  </section>
+        
+        
+
+        <section id="contact"
+            style="background: white; padding: 3rem; border-radius: 8px; box-shadow: var(--shadow); margin: 2rem 0;">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Your Name" required />
+                <input type="email" id="email" placeholder="Your Email" required />
+                <textarea id="message" rows="5" placeholder="Your Message or Query..." required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>Cultural Synod • [Your College Name]</p>
+        <div style="margin-top: 1rem;">
+            <a href="#" style="color: white; margin: 0 0.5rem;">Instagram</a>
+            <a href="#" style="color: white; margin: 0 0.5rem;">Twitter</a>
+            <a href="#" style="color: white; margin: 0 0.5rem;">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script>
+        const track = document.querySelector('.gallery-track');
+        const totalSlides = document.querySelectorAll('.gallery-item').length;
+        let currentIndex = 0;
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }, 3000);
+
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert("Thanks! We'll get in touch with you shortly.");
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>

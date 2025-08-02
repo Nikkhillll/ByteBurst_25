@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Core Admin</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Poppins, sans-serif; background: #0f172a; color: white; padding: 20px; }
+    .login-box, .admin-panel { background: #1e293b; padding: 20px; border-radius: 8px; width: 400px; margin: 50px auto; text-align: center; }
+    .login-box input { width: 80%; padding: 10px; margin: 10px; border-radius: 6px; border: none; }
+    .btn { background: #2563eb; color: white; padding: 8px 15px; border: none; border-radius: 6px; cursor: pointer; }
+    .btn:hover { background: #1d4ed8; }
+    .society-card { background: #334155; margin: 10px 0; padding: 10px; border-radius: 6px; }
+    input, select, textarea { width: 90%; padding: 8px; margin: 5px; border: none; border-radius: 5px; }
+    .event-list { margin-top: 10px; }
+    .event-item { background: #475569; padding: 5px; border-radius: 5px; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <!-- Login Box -->
+  <div class="login-box" id="loginBox">
+    <h2>Admin Login</h2>
+    <input type="password" id="adminPassword" placeholder="Enter Password">
+    <button class="btn" onclick="login()">Login</button>
+    <p id="loginMessage" style="color:red; display:none;">Incorrect Password</p>
+  </div>
+
+  <!-- Admin Panel -->
+  <div class="admin-panel" id="adminPanel" style="display:none;">
+    <h2>Manage Societies</h2>
+
+    <!-- Add Society -->
+    <h3>Add New Society</h3>
+    <input type="text" id="societyName" placeholder="Society Name">
+    <input type="text" id="societyCategory" placeholder="Category">
+    <textarea id="societyDesc" placeholder="Description"></textarea>
+    <input type="text" id="societyImage" placeholder="Image Path (e.g., images/coder.jpg)">
+    <button class="btn" onclick="addSociety()">Add Society</button>
+
+    <hr>
+
+    <!-- Existing Societies -->
+    <div id="societyList"></div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
